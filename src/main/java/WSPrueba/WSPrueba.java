@@ -29,7 +29,7 @@ public class WSPrueba {
         return n1+n2;
     }
     
-    @WebMethod(operationName = "suma")
+    @WebMethod(operationName = "igual")
     public boolean igual(@WebParam(name = "n1")int n1,@WebParam(name = "n2")int n2 ) {
         return n1==n2;
     }
