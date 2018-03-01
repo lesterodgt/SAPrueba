@@ -140,6 +140,38 @@
         </configuration>
        
       </plugin>
+	  <plugin>
+        <groupId>com.smartbear.soapui</groupId>
+        <artifactId>soapui-maven-plugin</artifactId>
+        <version>5.2.1</version>
+        <configuration>
+            <projectFile>${basedir}/soapui-project/${project.artifactId}-soapui-project-${env}.xml</projectFile>
+            <testSuite>SoaTestSuite</testSuite>
+            <printReport>true</printReport>
+            <outputFolder>${basedir}/soapui-output</outputFolder>
+            <junitReport>true</junitReport>
+            <host>${soa.host}:${soa.port}</host>
+            <username>${weblogic.user}</username>
+            <password>${weblogic.password}</password>
+            <endpoint>${endpoint}</endpoint>
+        </configuration>
+        <dependencies>
+          <dependency> 
+               <groupId>com.jgoodies</groupId> 
+               <artifactId>forms</artifactId> 
+               <version>1.0.7</version> 
+          </dependency>
+        </dependencies>
+        <executions>
+            <execution>
+                <id>SoapUI-Test</id>
+                <phase>integration-test</phase>
+                <goals>
+                    <goal>test</goal>
+                </goals>
+            </execution>
+        </executions>
+      </plugin>
     </plugins>
   </reporting>
 </project>
