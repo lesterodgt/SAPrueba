@@ -154,7 +154,7 @@
             <username>${weblogic.user}</username>
             <password>${weblogic.password}</password>
             <endpoint>${endpoint}</endpoint>
-        </configuration>
+        
         <executions>
             <execution>
                 <id>SoapUI-Test</id>
@@ -164,6 +164,7 @@
                 </goals>
             </execution>
         </executions>
+		</configuration>
       </plugin>
     </plugins>
   </reporting>
