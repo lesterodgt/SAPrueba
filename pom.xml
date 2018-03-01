@@ -6,14 +6,13 @@
     <artifactId>prueba</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-
     <name>prueba</name>
+	
 	  <pluginRepositories>
         <pluginRepository>
           <id>smartbear-plugin-repository</id>
           <url>http://www.soapui.org/repository/maven2/</url>
         </pluginRepository>
-      </pluginRepositories>
         <pluginRepository>
           <id>maven-repo-central</id>
           <url>http://repo.maven.apache.org/maven2/</url>
