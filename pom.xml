@@ -122,8 +122,7 @@
 		   <showSuccess>true</showSuccess>
 		   <aggregate>true</aggregate>
 		   <linkXRef>false</linkXRef>
-        </configuration>
-        <executions>
+		    <executions>
           <execution>
             <id>Surefire-Report</id>
             <phase>verify</phase>
@@ -132,6 +131,8 @@
             </goals>
           </execution>
         </executions>
+        </configuration>
+       
       </plugin>
     </plugins>
   </reporting>
