@@ -19,6 +19,17 @@
             <url>http://www.soapui.org/repository/maven2/</url>
       </pluginRepository>
 </pluginRepositories>
+  <repositories>
+        <repository>
+			<id>my-local-repo</id>
+			<url>${project.basedir}/src/test/resources/</url>
+		</repository>
+        <repository>
+            <id>smartbear</id>
+            <name>smartbear repository</name>
+            <url>http://smartbearsoftware.com/repository/maven2</url>
+        </repository>
+</repositories>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -44,6 +55,18 @@
             <version>6.0</version>
             <scope>provided</scope>
         </dependency>
+		  <dependency>
+            <groupId>com.smartbear.soapui</groupId>
+            <artifactId>soapui</artifactId>
+            <version>5.2.1</version>
+            <scope>test</scope>
+            <type>jar</type>
+</dependency>
+<dependency>
+            <groupId>com.jgoodies</groupId>
+            <artifactId>forms</artifactId>
+            <version>1.0.7</version>
+</dependency>
     </dependencies>
 
     <build>
@@ -95,27 +118,30 @@
                 </executions>
             </plugin>
 			<plugin>
-			  <groupId>com.smartbear.soapui</groupId>
-			 <artifactId>soapui-pro-maven-plugin</artifactId>
-                <version>4.6.1</version>
-			  <configuration>
-				<!--soapUI project file location-->
-				<projectFile>SAPrueba-project.xml</projectFile>
-				<!--output file location-->
-				<outputFolder>${project.basedir}/output/</outputFolder>
-				<!--junit results file-->
-				<junitReport>true</junitReport>
-			  </configuration>
-			  <executions>
-				<execution>
-				  <id>soapUI</id>
-				   <phase>test</phase>
-				  <goals>
-					 <goal>test</goal>
-				  </goals>
-				</execution>
-			  </executions>
-  </plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${endorsed.dir}</outputDirectory>
+                            <silent>true</silent>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>javax</groupId>
+                                    <artifactId>javaee-endorsed-api</artifactId>
+                                    <version>7.0</version>
+                                    <type>jar</type>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+</plugin>
         </plugins>
     </build>
 	<reporting>
