@@ -96,7 +96,7 @@
             <version>5.1.2</version>
 
             <configuration>
-                <projectFile>soapui-project.xml</projectFile>
+                <projectFile>prueba-project.xml</projectFile>
                 <outputFolder>${project.build.directory}/reports</outputFolder>
                 <junitReport>true</junitReport>
                 <exportAll>true</exportAll>
