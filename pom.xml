@@ -155,13 +155,6 @@
             <password>${weblogic.password}</password>
             <endpoint>${endpoint}</endpoint>
         </configuration>
-        <dependencies>
-          <dependency> 
-               <groupId>com.jgoodies</groupId> 
-               <artifactId>forms</artifactId> 
-               <version>1.0.7</version> 
-          </dependency>
-        </dependencies>
         <executions>
             <execution>
                 <id>SoapUI-Test</id>
