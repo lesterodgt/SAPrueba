@@ -112,66 +112,8 @@
                     </execution>
                 </executions>
             </plugin>
+			
+			
         </plugins>
     </build>
-	<reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-report-plugin</artifactId>
-        <version>2.18.1</version>
-      </plugin>
-	  <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-report-plugin</artifactId>
-        <version>2.20.1</version>
-        <configuration>
-            <reportsDirectories>
-              <reportsDirectory>${basedir}/soapui-output</reportsDirectory>
-            </reportsDirectories> 
-			<outputDirectory>${basedir}/soapui-output</outputDirectory>
-			<outputName>${project.artifactId}-TEST-${env}</outputName>
-		   <showSuccess>true</showSuccess>
-		   <aggregate>true</aggregate>
-		   <linkXRef>false</linkXRef>
-		    <executions>
-          <execution>
-            <id>Surefire-Report</id>
-            <phase>verify</phase>
-            <goals>
-              <goal>report-only</goal>
-            </goals>
-          </execution>
-        </executions>
-        </configuration>
-       
-      </plugin>
-	  <plugin>
-        <groupId>com.smartbear.soapui</groupId>
-        <artifactId>soapui-maven-plugin</artifactId>
-        <version>5.2.1</version>
-        <configuration>
-            <projectFile>${basedir}/soapui-project/${project.artifactId}-soapui-project-${env}.xml</projectFile>
-            <testSuite>SoaTestSuite</testSuite>
-            <printReport>true</printReport>
-            <outputFolder>${basedir}/soapui-output</outputFolder>
-            <junitReport>true</junitReport>
-            <host>${soa.host}:${soa.port}</host>
-            <username>${weblogic.user}</username>
-            <password>${weblogic.password}</password>
-            <endpoint>${endpoint}</endpoint>
-        
-        <executions>
-            <execution>
-                <id>SoapUI-Test</id>
-                <phase>integration-test</phase>
-                <goals>
-                    <goal>test</goal>
-                </goals>
-            </execution>
-        </executions>
-		</configuration>
-      </plugin>
-    </plugins>
-  </reporting>
 </project>
