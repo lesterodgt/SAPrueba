@@ -1,3 +1,5 @@
+package Pruebas;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,6 +11,7 @@
  * @author Rocael
  */
 
+
 import com.eviware.soapui.tools.SoapUITestCaseRunner;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -17,14 +20,10 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author Pamela Palacios
- */
-public class PruebaFuncional {
+public class PruebaFunc {
     
      
- public PruebaFuncional() {
+ public PruebaFunc() {
  }
   @Test
 	public void shouldExecuteAllTestCases() throws Exception{

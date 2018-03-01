@@ -24,8 +24,8 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
+            <version>4.4</version>
+            <type>jar</type>
         </dependency>
         <dependency>
             <groupId>org.hamcrest</groupId>
@@ -39,7 +39,13 @@
             <version>2.3</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
+	         <dependency>
+	              <groupId>eviware</groupId>
+	              <artifactId>soapui</artifactId>
+	              <version>3.6.2-SNAPSHOT</version>
+	              <type>jar</type>
+	         </dependency>
+	         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>6.0</version>
