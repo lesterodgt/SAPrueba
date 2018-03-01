@@ -78,29 +78,6 @@
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
-            <plugin>
-            <groupId>com.smartbear.soapui</groupId>
-            <artifactId>soapui-maven-plugin</artifactId>
-            <version>5.1.2</version>
-
-            <configuration>
-                <projectFile>prueba-project.xml</projectFile>
-                <outputFolder>${project.build.directory}/reports</outputFolder>
-                <junitReport>true</junitReport>
-                <exportAll>true</exportAll>
-                <printReport>true</printReport>
-                <testSuite>Authenticate</testSuite>
-            </configuration>
-
-            <executions>
-                <execution>
-                    <phase>test</phase>
-                    <goals>
-                        <goal>test</goal>
-                    </goals>
-                </execution>
-            </executions>
-        </plugin>
         </plugins>
     </build>
 </project>
