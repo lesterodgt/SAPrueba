@@ -8,7 +8,29 @@
     <packaging>war</packaging>
 
     <name>prueba</name>
-
+	
+	<profile>
+      <id>Smartbear-Profile</id>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>smartbear-plugin-repository</id>
+          <url>http://www.soapui.org/repository/maven2/</url>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+    <profile>
+      <id>Maven-Central-Profile</id>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>maven-repo-central</id>
+          <url>http://repo.maven.apache.org/maven2/</url>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+ <activeProfiles>
+    <activeProfile>Maven-Central-Profile</activeProfile>
+    <activeProfile>Smartbear-Profile</activeProfile>
+  </activeProfiles>
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
