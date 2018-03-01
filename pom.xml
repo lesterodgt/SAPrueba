@@ -8,16 +8,13 @@
     <packaging>war</packaging>
     <name>prueba</name>
 	
-	  <pluginRepositories>
-        <pluginRepository>
-          <id>smartbear-plugin-repository</id>
-          <url>http://www.soapui.org/repository/maven2/</url>
-        </pluginRepository>
-        <pluginRepository>
-          <id>maven-repo-central</id>
-          <url>http://repo.maven.apache.org/maven2/</url>
-        </pluginRepository>
-      </pluginRepositories>
+	 <repositories>
+    <repository>
+        <id>smartbear</id>
+        <name>smartbear repository</name>
+        <url>http://smartbearsoftware.com/repository/maven2</url>
+    </repository>
+</repositories>
      
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
@@ -49,11 +46,10 @@
             <scope>provided</scope>
         </dependency>
 		  <dependency>
-            <groupId>com.smartbear.soapui</groupId>
-            <artifactId>soapui</artifactId>
-            <version>5.2.1</version>
-            <scope>test</scope>
-            <type>jar</type>
+    <groupId>com.smartbear.soapui</groupId>
+    <artifactId>soapui</artifactId>
+    <version>5.2.1</version>
+    <scope>test</scope>
 </dependency>
 <dependency>
             <groupId>com.jgoodies</groupId>
