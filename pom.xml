@@ -15,13 +15,9 @@
     </properties>
 	<pluginRepositories>
     <pluginRepository>
-        <id>smartbear-sweden-plugin-repository</id>
-        <url>http://www.soapui.org/repository/maven2/</url>
-    </pluginRepository>
-	 <pluginRepository>
-      <id>eviwarePluginRepository</id>
-      <url>http://www.eviware.com/repository/maven2/</url>
-   </pluginRepository>
+            <id>SmartBearPluginRepository</id>
+            <url>http://www.soapui.org/repository/maven2/</url>
+      </pluginRepository>
 </pluginRepositories>
     <dependencies>
         <dependency>
@@ -100,8 +96,8 @@
             </plugin>
 			<plugin>
 			  <groupId>com.smartbear.soapui</groupId>
-			  <artifactId>soapui-maven-plugin</artifactId>
-			  <version>5.1.2-m-SNAPSHOT</version>
+			 <artifactId>soapui-pro-maven-plugin</artifactId>
+                <version>4.6.1</version>
 			  <configuration>
 				<!--soapUI project file location-->
 				<projectFile>SAPrueba-project.xml</projectFile>
