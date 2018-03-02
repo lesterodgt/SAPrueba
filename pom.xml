@@ -9,10 +9,10 @@
     <name>prueba</name>
 	
 	  <pluginRepositories>
-        <pluginRepository>
-            <id>SmartBearPluginRepository</id>
-            <url>http://smartbearsoftware.com/repository/maven2</url>
-        </pluginRepository>
+	<pluginRepository>
+		<id>eviwarePluginRepository</id>
+		<url>http://www.eviware.com/repository/maven2/</url>
+	</pluginRepository>
 </pluginRepositories>
 
     <properties>
@@ -68,38 +68,26 @@
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
-  <plugin>
-                <groupId>com.smartbear.soapui</groupId>
-                <artifactId>soapui-maven-plugin</artifactId>
-                <version>5.3.0</version>
-                <configuration>
-                    <projectFile>soapui-maven-example.xml</projectFile>
-                    <projectProperties>
-                        <value>example=Hello World!</value>
-                    </projectProperties>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <artifactId>maven-clean-plugin</artifactId>
-                <configuration>
-                    <filesets>
-                        <fileset>
-                            <directory>${project.basedir}</directory>
-                            <includes>
-                                <include>*.log</include>
-                            </includes>
-                            <followSymlinks>false</followSymlinks>
-                        </fileset>
-                    </filesets>
-                </configuration>
+  <!-- Run SOAP UI tests during the integration phase. -->
+<plugin>
+	<groupId>eviware</groupId>
+	<artifactId>maven-soapui-plugin</artifactId>
+	<version>2.5.1</version>
+	<configuration>
+		<junitReport>yes</junitReport>
+		<exportAll>yes</exportAll>
+		<projectFile>target/test-classes/soapui-project.xml</projectFile>
+		<outputFolder>target/soapui-reports</outputFolder>
+	</configuration>
+	<executions>
+		<execution>
+			<id>wsn-server-test</id>
+			<phase>integration-test</phase>
+			<goals>
+				<goal>test</goal>
+			</goals>
+		</execution>
+	</executions>
 </plugin>
         </plugins>
     </build>
