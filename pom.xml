@@ -13,22 +13,47 @@
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-	 <repositories>
-        <repository>
-			<id>my-local-repo</id>
-			<url>${project.basedir}/src/test/resources/</url>
-		</repository>
-        <repository>
-            <id>smartbear</id>
-            <name>smartbear repository</name>
-            <url>http://smartbearsoftware.com/repository/maven2</url>
-        </repository>
-    <repository>
-            <id>soapUI</id>
-            <url>http://www.eviware.com/repository/maven2/</url>
-        </repository>
-    </repositories>
-    <pluginRepositories>
+	
+
+I have a SOAPUI Project file with number of test suits. I have wrote a maven project to run that project file. I am running that maven project (pom.xml) through jenkins.
+
+As you can see in the pom.xml have enabled Junit Reporting and Print Report configurations.
+
+I can get a simple test result/report like below.
+
+enter image description here
+
+enter image description here
+
+enter image description here
+
+My question is whether there is a plugin,tool or any other method to get a more visual, detailed test result report.preferably a html type report.
+
+My pom.xml file.
+
+<?xml version="1.0" encoding="UTF-8"?> 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<modelVersion>4.0.0</modelVersion>
+
+<groupId>soapTest</groupId>
+<artifactId>soapTest</artifactId>
+<packaging>jar</packaging>
+<version>1.0-SNAPSHOT</version>
+<name>Maven 2 SoapUI Sample</name>
+<url>http://maven.apache.org</url>
+
+<pluginRepositories>
+    <pluginRepository>
+        <id>SmartBearPluginRepository</id>
+        <url>http://www.soapui.org/repository/maven2/</url>
+    </pluginRepository>
+    <pluginRepository>
+        <id>eviwarePluginRepository</id>
+        <url>http://www.eviware.com/repository/maven2/</url>
+    </pluginRepository>
+</pluginRepositories>
         <pluginRepository>
             <id>eviwarePluginRepository</id>
             <url>http://www.eviware.com/repository/maven2/</url>
@@ -117,24 +142,28 @@
             </plugin>
 			
 			<plugin>
-                <groupId>eviware</groupId>
-                <artifactId>maven-soapui-plugin</artifactId>
-                <version>4.0.1</version>
-                <configuration>
-                    <projectFile>./prueba-project.xml</projectFile>
-                    <outputFolder>./test/target/soapUI</outputFolder>
-                    <junitReport>true</junitReport>
-                    <printReport>true</printReport>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>integration-test</phase>
-                        <goals>
-                            <goal>test</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+            <groupId>com.smartbear.soapui</groupId>
+            <artifactId>soapui-maven-plugin</artifactId>
+            <version>5.1.2</version>
+
+            <configuration>
+                <projectFile>soapui-project.xml</projectFile>
+                <outputFolder>${project.build.directory}/reports</outputFolder>
+                <junitReport>true</junitReport>
+                <exportAll>true</exportAll>
+                <printReport>true</printReport>
+                <testSuite>Authenticate</testSuite>
+            </configuration>
+
+            <executions>
+                <execution>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>test</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
 			
         </plugins>
     </build>
