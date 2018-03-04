@@ -1,4 +1,4 @@
-package Pruebas;
+
 
 import com.eviware.soapui.tools.SoapUITestCaseRunner;
 import org.junit.After;
