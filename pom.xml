@@ -13,36 +13,6 @@
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-	
-
-I have a SOAPUI Project file with number of test suits. I have wrote a maven project to run that project file. I am running that maven project (pom.xml) through jenkins.
-
-As you can see in the pom.xml have enabled Junit Reporting and Print Report configurations.
-
-I can get a simple test result/report like below.
-
-enter image description here
-
-enter image description here
-
-enter image description here
-
-My question is whether there is a plugin,tool or any other method to get a more visual, detailed test result report.preferably a html type report.
-
-My pom.xml file.
-
-<?xml version="1.0" encoding="UTF-8"?> 
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-<modelVersion>4.0.0</modelVersion>
-
-<groupId>soapTest</groupId>
-<artifactId>soapTest</artifactId>
-<packaging>jar</packaging>
-<version>1.0-SNAPSHOT</version>
-<name>Maven 2 SoapUI Sample</name>
-<url>http://maven.apache.org</url>
 
 <pluginRepositories>
     <pluginRepository>
