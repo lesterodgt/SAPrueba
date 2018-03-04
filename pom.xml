@@ -48,7 +48,7 @@
             <artifactId>soapui</artifactId>
             <version>3.6.2-SNAPSHOT</version>
             <scope>test</scope>
-            <type>jar</type>
+            <type>provided</type>
         </dependency>
         <dependency>
             <groupId>javax</groupId>
