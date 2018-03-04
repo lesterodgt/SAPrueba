@@ -44,12 +44,11 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>eviware</groupId>
-            <artifactId>soapui</artifactId>
-            <version>3.6.2-SNAPSHOT</version>
-            <scope>test</scope>
-            <type>provided</type>
-        </dependency>
+			<groupId>eviware</groupId>
+			<artifactId>soapui-xmlbeans</artifactId>
+			<version>3.6.2-SNAPSHOT</version>
+			<type>jar</type>
+		</dependency>
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
