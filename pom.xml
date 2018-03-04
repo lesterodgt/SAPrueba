@@ -23,10 +23,6 @@
         <id>eviwarePluginRepository</id>
         <url>http://www.eviware.com/repository/maven2/</url>
     </pluginRepository>
-        <pluginRepository>
-            <id>eviwarePluginRepository</id>
-            <url>http://www.eviware.com/repository/maven2/</url>
-        </pluginRepository>
     </pluginRepositories>
     <dependencies>
         <dependency>
